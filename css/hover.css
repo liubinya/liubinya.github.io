@@ -1,0 +1,43 @@
+.health_bottom div:hover {
+	background: linear-gradient(to bottom ,#f8f8f8 71px,rgb(87,245,151) 71px,rgb(87,200,243)) ;
+	margin-top: 0;
+	height: 331px;
+	border-bottom: 0;
+	color: white;
+}
+.health_bottom div:hover .iconfont.icon-youjiantou {
+	color: white;
+}
+.health_bottom div:hover img:nth-of-type(1){
+	display: none;
+}
+.health_bottom div:hover img:nth-of-type(2){
+	display: block;
+}
+.health_bottom div:hover p:nth-of-type(2){
+	line-height: 22px;
+	border-bottom: 0;
+	margin-top: 0;
+}
+.special li:hover a i{
+	display: block;
+}
+
+
+.special ul li img {
+	/*display: none;*/
+	/*opacity: 0;*/
+	transition: all linear 0.3s; 
+}
+.special ul li:hover .specila_left{
+	background: #57c7f6;
+	color: white;
+}
+.special ul li:hover .specila_right{
+	background: #57c7f6;
+	color: white;
+}
+.special ul li:hover img {
+	width: 364px;
+	/*opacity: 1;*/
+}
