@@ -1,122 +1,73 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<title>通缉令悬赏通告</title>
-		
-		
-		
+		<meta charset="utf-8">
+		<title></title>
 		<style type="text/css">
-			body {
-				background: black;
-				perspective: 3000px;
-				perspective-origin: top;
+			
+			form {
+				width: 400px;
+				margin: 50px auto;
 			}
 			
-			.center {
-				transform-style: preserve-3d;
-				margin: 180px auto 0;
-				width: 200px;
-				height: 283px;
-				/*position: relative;*/
-				animation: out 11s linear infinite;
-				
-			}
-			img {
-				width: 200px;
-				height: 283px;
-				position: absolute;
-				left: 0;
-				top: 0;
+			.peopleNumber {
+				width: 40px;
 			}
 			
-			@keyframes out{
-				from{
-					transform: rotateX(-4deg) rotateY(0deg);
-				}
-				to{
-					transform: rotateX(-4deg) rotateY(360deg);
-				}
+			ul {
+				width: 300px;
+				margin: 0 auto;
 			}
-			
-			
-			.center img:nth-child(1) {
-				transform: translateZ(500px);
+
+			li {
+				float: left;
+				/* margin-left: 5px; */
+				list-style: none;
+				width: 150px;
 			}
-			.center img:nth-child(2) {
-				transform: rotateY(30deg) translateZ(500px);
-			}
-			.center img:nth-child(3) {
-				transform: rotateY(60deg) translateZ(500px);
-			}
-			.center img:nth-child(4) {
-				transform: rotateY(90deg) translateZ(500px);
-			}
-			.center img:nth-child(5) {
-				transform: rotateY(120deg) translateZ(500px);
-			}
-			.center img:nth-child(6) {
-				transform: rotateY(150deg) translateZ(500px);
-			}
-			.center img:nth-child(7) {
-				transform: rotateY(180deg) translateZ(500px);
-			}
-			.center img:nth-child(8) {
-				transform: rotateY(210deg) translateZ(500px);
-			}
-			.center img:nth-child(9) {
-				transform: rotateY(240deg) translateZ(500px);
-			}
-			.center img:nth-child(10) {
-				transform: rotateY(270deg) translateZ(500px);
-			}
-			.center img:nth-child(11) {
-				transform: rotateY(300deg) translateZ(500px);
-			}
-			.center img:nth-child(12) {
-				transform: rotateY(330deg) translateZ(500px);
-			}
-		
-			.center:hover {
-				animation-play-state: paused;
-			}
-			
-			
 		</style>
-			
-		
-		
-		
-		
 	</head>
 	<body>
-		<audio src="music/きただにひろし (北谷洋) - ウィーアー！ (We Are!).mp3"  autoplay  ></audio>
-		<div class="center">
-			<img src="img/1.jpg" alt="" />
-			<img src="img/2.jpg" alt="" />
-			<img src="img/3.jpg" alt="" />
-			<img src="img/4.jpg" alt="" />
-			<img src="img/5.jpg" alt="" />
-			<img src="img/6.jpg" alt="" />
-			<img src="img/7.jpg" alt="" />
-			<img src="img/8.jpg" alt="" />
-			<img src="img/9.jpg" alt="" />
-			<img src="img/10.jpg" alt="" />
-			<img src="img/11.jpg" alt="" />
-			<img src="img/12.jpg" alt="" />
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-		
+		<form action="" method="">
+			<span>抽取人数</span>
+			<input type="number" class="peopleNumber">
+			<input type="button" name="" id="start" value="全员随机抽取" />
+			<input type="button" name="" id="startM" value="去除班委随机" />
+		</form>
+		<ul>
+
+		</ul>
 	</body>
+	<script type="text/javascript">
+		var ul = document.getElementsByTagName("ul")[0];
+		var peopleN = document.getElementsByClassName("peopleNumber")[0];
+		var start = document.getElementById("start");
+		start.onclick = function() {
+			
+			var people = ["周暄瞳", "张丽", "黎海河", "尹贺", "朱晓梦", "刘雨婷", "陈琳", "董亚美", "朱雪华", "王海萍", "王亚楠", "武琰琦", "张雅馨", "乔淑佳", "王梦贞",
+				"刘一龙", "李亚南", "李明涛", "徐艳伟", "杨树行", "王润珩", "伍延彬", "尹秋阳", "许红飞", "余仕良", "王翔", "曹功振", "杨衍珂", "石金霖", "贾子龙", "申哲",
+				"谢小卫", "张浩", "李详", "韩政", "尚腾起", "郭腾飞", "皇甫迎坤", "冀贵祖", "杨盼盼", "陈伯琳", "苏纪博", "郝龙彬", "李如洋", "严敬森", "郭士仪", "李国璞",
+				"韩岩磊", "何银柱"
+			];
+			ul.innerHTML = " ";
+			for (var i = 0; i < parseInt(peopleN.value); i++) {
+				var temp = document.createElement("li");
+				temp.innerHTML = (i + 1) + "&nbsp" + people.splice(Math.floor(Math.random() * people.length), 1);
+				ul.appendChild(temp);
+			}
+		}
+		var startM = document.getElementById("startM");
+		startM.onclick = function () {
+			var peopleM = ["黎海河", "尹贺", "朱晓梦", "陈琳", "董亚美", "朱雪华", "王亚楠", "乔淑佳", "王梦贞", "刘一龙", "李亚南", "李明涛", "徐艳伟", "杨树行", "王润珩",
+				"许红飞", "余仕良", "王翔", "曹功振", "杨衍珂", "石金霖", "贾子龙", "申哲", "谢小卫", "张浩", "李详", "尚腾起", "郭腾飞", "冀贵祖",  "陈伯琳", "苏纪博",
+				"郝龙彬", "李如洋", "严敬森", "李国璞", "韩岩磊", "何银柱"
+			];
+			ul.innerHTML = " ";
+			for (var i = 0; i < parseInt(peopleN.value); i++) {
+				var temp = document.createElement("li");
+				temp.innerHTML = (i + 1) + "&nbsp" + peopleM.splice(Math.floor(Math.random() * peopleM.length), 1);
+				ul.appendChild(temp);
+			}
+		}
+	</script>
 </html>
